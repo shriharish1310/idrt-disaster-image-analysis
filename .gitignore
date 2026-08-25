@@ -1,0 +1,23 @@
+# Source imagery is intentionally kept out of version control.
+data/raw/
+data/interim/
+data/processed/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Model and package caches
+.cache/
+models/
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
