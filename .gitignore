@@ -2,6 +2,7 @@
 data/raw/
 data/interim/
 data/processed/
+outputs/metrics/*_change_arrays.npz
 
 # Python
 .venv/
@@ -14,10 +15,10 @@ __pycache__/
 # Model and package caches
 .cache/
 models/
+tmp/
 
 # Local/editor files
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
-

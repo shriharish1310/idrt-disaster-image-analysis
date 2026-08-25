@@ -1,0 +1,142 @@
+{
+  "method": {
+    "pairs": [
+      {
+        "key": "maxar",
+        "label": "Maxar pre-event vs post-Milton",
+        "reference_file": "Maxar_pre_20231104_TreasureIsland_preview.png",
+        "comparison_file": "Maxar_post_20241010_TreasureIsland_preview.png",
+        "reference_label": "Pre-event | 2023-11-04",
+        "comparison_label": "Post-Milton | 2024-10-10",
+        "cloud_screen": false
+      },
+      {
+        "key": "noaa",
+        "label": "NOAA post-Helene vs post-Milton",
+        "reference_file": "NOAA_postHelene_20240930_TreasureIsland_preview.png",
+        "comparison_file": "NOAA_postMilton_20241011_TreasureIsland_preview.png",
+        "reference_label": "Post-Helene | 2024-09-30",
+        "comparison_label": "Post-Milton | 2024-10-11",
+        "cloud_screen": false
+      },
+      {
+        "key": "sentinel2",
+        "label": "Sentinel-2 pre-event vs post-Milton",
+        "reference_file": "S2_pre_20240919_preview.png",
+        "comparison_file": "S2_post_20241014_preview.png",
+        "reference_label": "Pre-event | 2024-09-19",
+        "comparison_label": "Post-Milton | 2024-10-14",
+        "cloud_screen": true
+      }
+    ],
+    "registration": "Phase-correlation residual translation diagnostic on Laplacian edge maps",
+    "photometric_control": "Per-channel median/IQR matching",
+    "similarity": "Masked SSIM, error metrics, gradient correlation, DINOv2 ViT-S/14 tile cosine",
+    "change_map": "0.55 normalized Lab delta-E + 0.45 normalized SSIM dissimilarity; high-confidence candidate threshold 0.65",
+    "cloud_control": "Conservative RGB preview heuristic; not an official Sentinel-2 QA mask"
+  },
+  "results": [
+    {
+      "mae": 0.1160711795091629,
+      "rmse": 0.16363921761512756,
+      "psnr_db": 15.72225211198038,
+      "ssim": 0.39067578315734863,
+      "gradient_correlation": 0.5322974505021232,
+      "high_change_fraction": 0.3294947499745935,
+      "pair": "maxar",
+      "label": "Maxar pre-event vs post-Milton",
+      "width_px": 1402,
+      "height_px": 1600,
+      "valid_coverage": 0.8158554743223966,
+      "cloud_screened_fraction": 0.0,
+      "analysis_coverage": 0.8158554743223966,
+      "residual_shift_x_px": -0.340074529251865,
+      "residual_shift_y_px": -0.8860647890057862,
+      "phase_correlation_response": 0.48470345685217114,
+      "dinov2_cosine": 0.7729199528694153,
+      "dinov2_tiles": 30,
+      "top_change_regions": [
+        {
+          "region": "north-west",
+          "mean_change_score": 0.6777569651603699
+        },
+        {
+          "region": "north-central-west-central",
+          "mean_change_score": 0.6642406582832336
+        },
+        {
+          "region": "south-central-west-central",
+          "mean_change_score": 0.6625762581825256
+        }
+      ]
+    },
+    {
+      "mae": 0.06517022103071213,
+      "rmse": 0.09528885781764984,
+      "psnr_db": 20.41915757405674,
+      "ssim": 0.6903889179229736,
+      "gradient_correlation": 0.7229895183983654,
+      "high_change_fraction": 0.048219193725457625,
+      "pair": "noaa",
+      "label": "NOAA post-Helene vs post-Milton",
+      "width_px": 1600,
+      "height_px": 1600,
+      "valid_coverage": 0.912841796875,
+      "cloud_screened_fraction": 0.0,
+      "analysis_coverage": 0.912841796875,
+      "residual_shift_x_px": 0.018024894689574467,
+      "residual_shift_y_px": 0.12019740319601624,
+      "phase_correlation_response": 0.7309179801940918,
+      "dinov2_cosine": 0.8190755248069763,
+      "dinov2_tiles": 33,
+      "top_change_regions": [
+        {
+          "region": "south-central-west",
+          "mean_change_score": 0.53738933801651
+        },
+        {
+          "region": "north-central-west",
+          "mean_change_score": 0.47092822194099426
+        },
+        {
+          "region": "south-west-central",
+          "mean_change_score": 0.4620637893676758
+        }
+      ]
+    },
+    {
+      "mae": 0.039286207407712936,
+      "rmse": 0.06610968708992004,
+      "psnr_db": 23.59469796869802,
+      "ssim": 0.9088753461837769,
+      "gradient_correlation": 0.9464325023947353,
+      "high_change_fraction": 0.015842603709365452,
+      "pair": "sentinel2",
+      "label": "Sentinel-2 pre-event vs post-Milton",
+      "width_px": 1264,
+      "height_px": 2000,
+      "valid_coverage": 0.987240506329114,
+      "cloud_screened_fraction": 0.55934375,
+      "analysis_coverage": 0.42789675632911395,
+      "residual_shift_x_px": 0.07807443880051324,
+      "residual_shift_y_px": 0.05073140697470535,
+      "phase_correlation_response": 0.7975093356788159,
+      "dinov2_cosine": 0.8061885833740234,
+      "dinov2_tiles": 10,
+      "top_change_regions": [
+        {
+          "region": "south-east-central",
+          "mean_change_score": 0.23258040845394135
+        },
+        {
+          "region": "north-east",
+          "mean_change_score": 0.20731042325496674
+        },
+        {
+          "region": "north-central-east",
+          "mean_change_score": 0.188868448138237
+        }
+      ]
+    }
+  ]
+}

@@ -7,4 +7,5 @@ scikit-image>=0.24,<1
 scikit-learn>=1.5,<2
 torch>=2.5,<3
 torchvision>=0.20,<1
+reportlab>=4,<6
 
